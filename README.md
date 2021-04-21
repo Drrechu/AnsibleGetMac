@@ -1,4 +1,4 @@
-#Ansible playbook to get information about device with given MAC address
+# Ansible playbook to get information about device with given MAC address
 
 # Usage
 Run
