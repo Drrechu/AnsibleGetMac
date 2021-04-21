@@ -1,0 +1,18 @@
+---
+- name: Get company name
+  hosts: localhost
+  gather_facts: no
+  vars:
+    mac_address: ""
+    api_key: ""
+
+  tasks:
+    - name: Make request
+      uri:
+        url: 'https://api.macaddress.io/v1?apiKey={{ api_key }}&search={{ mac_address }}'
+        return_content: yes
+      register: response
+
+    - debug:
+        msg: 'Company name is {{ response.content }}'
+
